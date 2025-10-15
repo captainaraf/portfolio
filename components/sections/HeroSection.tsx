@@ -34,17 +34,17 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium">
-              Genius • Strategist • Iron Man
+              Computer Guy • Strategist • Mechanic
             </p>
           </div>
 
           <div className="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
             <p className="text-lg">
-              I am a genius engineer with a passion for innovation. My primary
-              aim in life is to serve humanity and I know that the only way to
-              do so is by serving science. I will build a world where no human
-              has to worry about the boring stuffs and everyone can think about
-              taking the world forward.
+              I am a tech guy with a passion for innovation. My primary aim in
+              life is to serve humanity and I know that the only way to do so is
+              by serving science. I want to contribute to building a world where
+              no human has to worry about the boring stuffs and everyone can
+              think about taking the world forward.
             </p>
             <p className="text-lg">
               My journey was never smooth, it was full of ups and downs (downs
@@ -52,11 +52,8 @@ export function HeroSection() {
               needed to be done.
             </p>
             <p className="text-lg">
-              Now it's the time for me to build the world I always dreamed of.
-              And I will do it.{" "}
-              <span className="font-bold text-blue-800">
-                Whatever it takes.
-              </span>
+              Everything I do is a part of my greater plan. Don't be confused
+              when you see me doing something that makes absolute zero sense.
             </p>
             <p className="text-sm font-bold">
               Night gathers, and now my watch begins. It shall not end until my
@@ -64,6 +61,9 @@ export function HeroSection() {
               darkness. I am the watcher on the walls. I am the shield that
               guards the realms of men. I pledge my life and honor to the
               Night's Watch, for this night and all the nights to come.
+            </p>
+            <p className="text-sm text-blue-900">
+              A Song of Ice and Fire reference, ignore if you don't get it.
             </p>
           </div>
 
