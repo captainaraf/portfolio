@@ -1,51 +1,61 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { Mail, Github, Linkedin, Twitter, MapPin, Phone } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { useEffect, useRef, useState } from "react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+  MapPin,
+  Phone,
+  Facebook,
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const contactDetails = [
   {
     icon: Mail,
-    label: 'Email',
-    value: 'your.email@example.com',
-    href: 'mailto:your.email@example.com',
-    color: 'from-red-500 to-red-600'
+    label: "Email",
+    value: "shaidozzamanaraf21@gmail.com",
+    href: "mailto:shaidozzamanaraf21@gmail.com",
+    color: "from-red-500 to-red-600",
   },
   {
     icon: Phone,
-    label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
-    color: 'from-green-500 to-green-600'
+    label: "Phone",
+    value: "Nope you are not getting this",
+    href: null,
+    color: "from-green-500 to-green-600",
   },
   {
     icon: MapPin,
-    label: 'Location',
-    value: 'San Francisco, CA',
+    label: "Location",
+    value: "Somewhere in Bangladesh",
     href: null,
-    color: 'from-blue-500 to-blue-600'
+    color: "from-blue-500 to-blue-600",
   },
 ];
 
 const socialLinks = [
   {
     icon: Github,
-    label: 'GitHub',
-    href: 'https://github.com/yourusername',
-    color: 'hover:bg-slate-800 dark:hover:bg-slate-200'
+    label: "GitHub",
+    href: "https://github.com/captainaraf",
+    color: "hover:bg-slate-800 dark:hover:bg-slate-200",
   },
   {
-    icon: Linkedin,
-    label: 'LinkedIn',
-    href: 'https://linkedin.com/in/yourusername',
-    color: 'hover:bg-blue-600'
+    icon: Facebook,
+    label: "Facebook",
+    href: "https://web.facebook.com/shaidozzamanaraf/",
+    color: "hover:bg-blue-600",
   },
   {
-    icon: Twitter,
-    label: 'Twitter',
-    href: 'https://twitter.com/yourusername',
-    color: 'hover:bg-sky-500'
+    icon: () => <FontAwesomeIcon icon={faXTwitter} className="w-6 h-6" />,
+    label: "X",
+    href: "https://x.com/captainaraf",
+    color: "hover:bg-black",
   },
 ];
 
@@ -84,7 +94,8 @@ export function ContactSection() {
             Let's Connect
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Have a project in mind or just want to chat? I'd love to hear from you
+            I know I am a very interesting person. If you think the same, then
+            here is how to find me.
           </p>
         </div>
 
@@ -97,10 +108,10 @@ export function ContactSection() {
               return (
                 <Card
                   key={index}
-                  className={`group hover:shadow-xl transition-all duration-500 border-2 hover:border-blue-400 dark:hover:border-blue-600 ${
+                  className={`cursor-pointer group hover:shadow-xl transition-all duration-500 border-2 hover:border-blue-400 dark:hover:border-blue-600 ${
                     isVisible
-                      ? 'opacity-100 translate-y-0'
-                      : 'opacity-0 translate-y-10'
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${delay}ms` }}
                 >
@@ -149,7 +160,9 @@ export function ContactSection() {
 
           <div
             className={`transition-all duration-700 delay-500 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
             }`}
           >
             <Card className="border-2">
@@ -167,10 +180,15 @@ export function ContactSection() {
                           href={social.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`p-4 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-xl ${social.color}`}
+                          className={`p-3 w-12 h-12 rounded-full flex items-center justify-center bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-xl ${social.color}`}
                           aria-label={social.label}
                         >
-                          <Icon className="w-6 h-6" />
+                          {typeof Icon === "function" ? (
+                            <Icon />
+                          ) : (
+                            // @ts-ignore
+                            <Icon className="w-5 h-5" />
+                          )}
                         </a>
                       );
                     })}
@@ -183,11 +201,15 @@ export function ContactSection() {
 
         <div
           className={`mt-12 text-center transition-all duration-700 delay-700 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
+            isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
           <p className="text-slate-600 dark:text-slate-400 font-jetbrains">
-            © 2025 Your Name. Built with Next.js & Tailwind CSS
+            "I choose to run towards my problems, and not away from them.
+            Because that's what heroes do."
+          </p>
+          <p className="text-slate-600 dark:text-slate-400 font-jetbrains">
+            - Thor
           </p>
         </div>
       </div>

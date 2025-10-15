@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { User } from 'lucide-react';
-import Image from 'next/image';
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,38 +21,49 @@ export function HeroSection() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div
           className={`space-y-6 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            isVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-10"
           }`}
         >
           <div className="space-y-4">
             <h1 className="font-jetbrains text-5xl md:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-slate-100 dark:via-slate-300 dark:to-slate-100">
-              Hi, I'm{' '}
-              <span className="text-blue-600 dark:text-blue-400">Your Name</span>
+              Hi, I'm{" "}
+              <span className="text-blue-600 dark:text-blue-400">
+                Shaidozzaman Araf
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium">
-              Developer • Creator • Problem Solver
+              Genius • Strategist • Iron Man
             </p>
           </div>
 
           <div className="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
             <p className="text-lg">
-              Welcome to my digital space. I'm a passionate developer who loves crafting beautiful,
-              functional experiences that make a difference. With a keen eye for design and a
-              relentless drive for innovation, I transform ideas into reality.
+              I am a genius engineer with a passion for innovation. My primary
+              aim in life is to serve humanity and I know that the only way to
+              do so is by serving science. I will build a world where no human
+              has to worry about the boring stuffs and everyone can think about
+              taking the world forward.
             </p>
             <p className="text-lg">
-              My journey in tech has been driven by curiosity and the desire to solve complex problems.
-              I specialize in building modern web applications that are not just functional, but
-              delightful to use.
+              My journey was never smooth, it was full of ups and downs (downs
+              outnumber ups by 10 to 1). But who cares, I always kept doing what
+              needed to be done.
             </p>
             <p className="text-lg">
-              Every line of code I write is a step towards creating something meaningful. I believe
-              in clean code, exceptional user experience, and continuous learning.
+              Now it's the time for me to build the world I always dreamed of.
+              And I will do it.{" "}
+              <span className="font-bold text-blue-800">
+                Whatever it takes.
+              </span>
             </p>
-            <p className="text-lg">
-              When I'm not coding, you'll find me exploring new technologies, contributing to
-              open-source projects, or sharing knowledge with the developer community. Let's build
-              something amazing together.
+            <p className="text-sm font-bold">
+              Night gathers, and now my watch begins. It shall not end until my
+              death. I shall live and die at my post. I am the sword in the
+              darkness. I am the watcher on the walls. I am the shield that
+              guards the realms of men. I pledge my life and honor to the
+              Night's Watch, for this night and all the nights to come.
             </p>
           </div>
 
@@ -68,22 +78,29 @@ export function HeroSection() {
               href="#hall-of-fame"
               className="px-8 py-3 border-2 border-slate-900 dark:border-slate-100 text-slate-900 dark:text-slate-100 rounded-lg font-jetbrains font-medium hover:scale-105 transition-transform duration-300 hover:shadow-xl"
             >
-              View Work
+              View My Hall of Fame
             </a>
           </div>
         </div>
 
         <div
           className={`relative transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           }`}
         >
           <div className="relative w-full aspect-square max-w-md mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-3xl rotate-6 animate-pulse opacity-20" />
             <div className="absolute inset-0 bg-gradient-to-tl from-slate-400 via-slate-500 to-slate-600 rounded-3xl -rotate-6 animate-pulse opacity-20 animation-delay-500" />
 
-            <div className="relative w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center border-4 border-white dark:border-slate-600">
-              <User className="w-48 h-48 text-slate-400 dark:text-slate-500" strokeWidth={1} />
+            <div className="relative w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-600">
+              <Image
+                src="/assets/profile.jpg"
+                alt="Shaidozzaman Araf"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

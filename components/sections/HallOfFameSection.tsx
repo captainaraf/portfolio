@@ -1,41 +1,55 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { Trophy, Award, Star, Briefcase } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { useEffect, useRef, useState } from "react";
+import { Trophy, Award, Star, Briefcase } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const achievements = [
   {
     icon: Briefcase,
-    role: 'Senior Full Stack Developer',
-    organization: 'Tech Innovations Inc.',
-    period: '2022 - Present',
-    description: 'Leading development of enterprise-scale applications, mentoring junior developers, and architecting scalable solutions.',
-    highlights: ['Led team of 8 developers', 'Reduced load time by 60%', 'Implemented CI/CD pipeline']
+    role: "Assistant Executive of Technology",
+    organization: "WhiteBoard Initiatives",
+    period: "2025 - Present",
+    description:
+      "Playing a major role in the technology department of one of the largest STEM non profits in Bangladesh. Organizing events, managing projects, and leading teams that impact thousands of students.",
+  },
+  {
+    icon: Briefcase,
+    role: "Co-Founder, CEO and CTO",
+    organization: "Dead Mans Tech",
+    period: "2025 - Present",
+    description:
+      "A SaaS venture studio focused on creating high performance software services to make peoples' lives easier.",
   },
   {
     icon: Trophy,
-    role: 'Open Source Contributor',
-    organization: 'Various Projects',
-    period: '2020 - Present',
-    description: 'Active contributor to major open-source projects with over 500+ contributions and 2000+ stars across repositories.',
-    highlights: ['500+ contributions', '2000+ stars', 'Maintained 5 packages']
-  },
-  {
-    icon: Award,
-    role: 'Hackathon Winner',
-    organization: 'Global Tech Challenge 2023',
-    period: '2023',
-    description: 'First place winner for developing an AI-powered solution that revolutionized community engagement.',
-    highlights: ['1st place out of 200 teams', '$10,000 prize', 'Featured in TechCrunch']
+    role: "National Camper",
+    organization: "Bangladesh Artificial Intelligence Olympiad",
+    period: "2025",
+    description:
+      'Selected as one of the top AI enthusiasts in Bangladesh to participate in "THE" national camp, collaborating with experts and peers to advance AI knowledge.',
   },
   {
     icon: Star,
-    role: 'Technical Lead',
-    organization: 'StartupX',
-    period: '2020 - 2022',
-    description: 'Built the core platform from scratch, scaled to 100K+ users, and established engineering best practices.',
-    highlights: ['0 to 100K users', 'Built core platform', 'Established eng culture']
+    role: "National Contestant",
+    organization: "Bangladesh Olympiad in Informatics",
+    period: "2025",
+    description:
+      " Achieved the rank of national contestant in BdOI, showcasing my programming and problem solving skills on a national level.",
+  },
+  {
+    icon: Award,
+    role: "Divisional Runners Up",
+    organization: "National High School Programming Contest",
+    period: "2025",
+    description:
+      "Divisional runners up in secondary category, with a tied score with the first place contestant, became runners up due to time penalty.",
   },
 ];
 
@@ -47,10 +61,15 @@ export function HallOfFameSection() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting &&
+            visibleCards.length < achievements.length
+          ) {
             achievements.forEach((_, index) => {
               setTimeout(() => {
-                setVisibleCards((prev) => [...prev, index]);
+                setVisibleCards((prev) =>
+                  prev.includes(index) ? prev : [...prev, index]
+                );
               }, index * 200);
             });
           }
@@ -64,7 +83,7 @@ export function HallOfFameSection() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [visibleCards]);
 
   return (
     <section
@@ -78,7 +97,8 @@ export function HallOfFameSection() {
             Hall of Fame
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            A collection of roles, achievements, and milestones that define my professional journey
+            A collection of roles, achievements, and milestones that define my{" "}
+            <span className="text-blue-800">journey to greatness</span>
           </p>
         </div>
 
@@ -90,8 +110,10 @@ export function HallOfFameSection() {
             return (
               <Card
                 key={index}
-                className={`group hover:shadow-2xl transition-all duration-500 border-2 hover:border-blue-400 dark:hover:border-blue-600 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                className={`cursor-pointer group hover:shadow-2xl transition-all duration-500 border-2 hover:border-blue-400 dark:hover:border-blue-600 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
                 }`}
               >
                 <CardHeader>
@@ -116,22 +138,6 @@ export function HallOfFameSection() {
                   <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                     {achievement.description}
                   </p>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-slate-600 dark:text-slate-400 font-jetbrains">
-                      Key Highlights:
-                    </p>
-                    <ul className="space-y-1">
-                      {achievement.highlights.map((highlight, idx) => (
-                        <li
-                          key={idx}
-                          className="text-sm text-slate-600 dark:text-slate-400 flex items-center gap-2"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                          {highlight}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </CardContent>
               </Card>
             );
