@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   title: "Shaidozzaman Araf",
-  description: "Genius engineer with a passion for innovation",
+  description: "Tech guy with a passion for innovation",
 };
 
 const inter = Inter({
