@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faDiscord, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const contactDetails = [
   {
@@ -56,6 +56,12 @@ const socialLinks = [
     label: "X",
     href: "https://x.com/captainaraf",
     color: "hover:bg-black",
+  },
+  {
+    icon: () => <FontAwesomeIcon icon={faDiscord} className="w-6 h-6" />,
+    label: "X",
+    href: "https://discord.com/users/1351809669793845280",
+    color: "hover:bg-violet-600",
   },
 ];
 
