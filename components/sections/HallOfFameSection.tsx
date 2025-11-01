@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Trophy, Award, Star, Briefcase } from "lucide-react";
+import {
+  Trophy,
+  Award,
+  Star,
+  Briefcase,
+  BriefcaseBusiness,
+} from "lucide-react";
 import {
   Card,
   CardContent,
@@ -26,6 +32,16 @@ const achievements = [
     period: "2025 - Present",
     description:
       "A SaaS venture studio focused on creating high performance software services to make peoples' lives easier.",
+    badge: "Not Launched Yet",
+  },
+  {
+    icon: BriefcaseBusiness,
+    role: "Freelance Discord Bot Developer",
+    organization: "Fiverr",
+    period: "2021 - 2022",
+    description:
+      "Developed custom Discord bots for various clients, enhancing their server functionality and user engagement. Gained experience in client communication, project management, and delivering high-quality software solutions.",
+    badge: "Stopped Working",
   },
   {
     icon: Trophy,
@@ -49,7 +65,7 @@ const achievements = [
     organization: "National High School Programming Contest",
     period: "2025",
     description:
-      "Divisional runners up in secondary category, with a tied score with the first place contestant, became runners up due to time penalty.",
+      "Divisional runners up in secondary category, Sylhet Division.",
   },
 ];
 
@@ -98,7 +114,9 @@ export function HallOfFameSection() {
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             A collection of roles, achievements, and milestones that define my{" "}
-            <span className="text-blue-800">journey to greatness</span>
+            <span className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-1 rounded-full font-medium transform -rotate-2">
+              journey
+            </span>
           </p>
         </div>
 
@@ -110,12 +128,17 @@ export function HallOfFameSection() {
             return (
               <Card
                 key={index}
-                className={`cursor-pointer group hover:shadow-2xl transition-all duration-500 border-2 hover:border-blue-400 dark:hover:border-blue-600 ${
+                className={`group hover:shadow-2xl transition-all duration-500 border-2 hover:border-blue-400 dark:hover:border-blue-600 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
-                }`}
+                } relative`}
               >
+                {achievement.badge && (
+                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-red-600 to-red-400 text-white text-sm px-3 py-1 rounded-full shadow-lg transform rotate-12 font-medium">
+                    {achievement.badge}
+                  </div>
+                )}
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">

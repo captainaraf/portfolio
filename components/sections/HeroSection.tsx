@@ -34,36 +34,29 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium">
-              Computer Guy • Strategist • Mechanic
+              Software Developer • AI Engineer • UI/UX Designer
             </p>
           </div>
 
           <div className="space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed">
             <p className="text-lg">
-              I am a tech guy with a passion for innovation. My primary aim in
-              life is to serve humanity and I know that the only way to do so is
-              by serving science. I want to contribute to building a world where
-              no human has to worry about the boring stuffs and everyone can
-              think about taking the world forward.
+              Can you imagine a type of person who replaces their 10 minute
+              break with a short business documentary? Or someone who enjoys
+              watching devday keynotes more than a football match? Well, pretty
+              sure that's me.
             </p>
             <p className="text-lg">
-              My journey was never smooth, it was full of ups and downs (downs
-              outnumber ups by 10 to 1). But who cares, I always kept doing what
-              needed to be done.
+              Since 2020, I have been devoting majority of my brainpower to
+              building software, making the computers follow my commands. I have
+              worked with numerous projects, and every single one of them taught
+              me some very important lessons that I would have never learned
+              otherwise.
             </p>
             <p className="text-lg">
-              Everything I do is a part of my greater plan. Don't be confused
-              when you see me doing something that makes absolute zero sense.
-            </p>
-            <p className="text-sm font-bold">
-              Night gathers, and now my watch begins. It shall not end until my
-              death. I shall live and die at my post. I am the sword in the
-              darkness. I am the watcher on the walls. I am the shield that
-              guards the realms of men. I pledge my life and honor to the
-              Night's Watch, for this night and all the nights to come.
-            </p>
-            <p className="text-sm text-blue-900">
-              A Song of Ice and Fire reference, ignore if you don't get it.
+              Whether it is a website, a mobile app, or an AI agent, I have
+              always been fascinated by the idea of creating something that can
+              solve real-world problems. I love the challenge of taking an idea
+              and turning it into a functional product that people can use.
             </p>
           </div>
 

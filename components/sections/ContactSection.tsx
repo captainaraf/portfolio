@@ -211,11 +211,10 @@ export function ContactSection() {
           }`}
         >
           <p className="text-slate-600 dark:text-slate-400 font-jetbrains">
-            "I choose to run towards my problems, and not away from them.
-            Because that's what heroes do."
+            "Serving science means serving humanity."
           </p>
           <p className="text-slate-600 dark:text-slate-400 font-jetbrains">
-            - Thor
+            - Araf
           </p>
         </div>
       </div>

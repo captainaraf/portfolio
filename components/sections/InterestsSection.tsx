@@ -13,7 +13,11 @@ import {
 } from "lucide-react";
 
 const interests = [
-  { icon: Code2, title: "Coding", color: "from-blue-500 to-blue-600" },
+  {
+    icon: Code2,
+    title: "Software Development",
+    color: "from-blue-500 to-blue-600",
+  },
   {
     icon: Trophy,
     title: "Competitive Programming",
@@ -34,10 +38,14 @@ const interests = [
     title: "Business and Entrepreneurship",
     color: "from-yellow-500 to-yellow-600",
   },
-  { icon: BookOpen, title: "Reading", color: "from-orange-500 to-orange-600" },
+  {
+    icon: BookOpen,
+    title: "Acquiring Knowledge",
+    color: "from-orange-500 to-orange-600",
+  },
   {
     icon: Rocket,
-    title: "Aerospace Engineering",
+    title: "Theoretical Aerospace Engineering",
     color: "from-cyan-500 to-cyan-600",
   },
   {
@@ -82,14 +90,14 @@ export function InterestsSection() {
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-16">
           <h2 className="font-jetbrains text-4xl md:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-4">
-            Interests & Hobbies
+            Fields of Expertise
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             The elixir of life that keeps my soul alive
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {interests.map((interest, index) => {
             const Icon = interest.icon;
             const isVisible = visibleCards.includes(index);
@@ -103,16 +111,16 @@ export function InterestsSection() {
                     : "opacity-0 scale-95 translate-y-10"
                 }`}
               >
-                <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 p-8 flex flex-col items-center justify-center gap-4 border-2 border-slate-200 dark:border-slate-700 hover:border-transparent transition-all duration-300 hover:shadow-2xl hover:scale-105 cursor-pointer overflow-hidden">
+                <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 p-4 sm:p-8 flex flex-col items-center justify-center gap-2 sm:gap-4 border-2 border-slate-200 dark:border-slate-700 hover:border-transparent transition-all duration-300 hover:shadow-2xl hover:scale-105 overflow-hidden">
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${interest.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                   />
 
-                  <div className="relative z-10 p-4 rounded-full bg-white dark:bg-slate-950 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-12 h-12 text-slate-700 dark:text-slate-300 dark:group-hover:text-white transition-colors duration-300" />
+                  <div className="relative z-10 p-3 sm:p-4 rounded-full bg-white dark:bg-slate-950 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-8 h-8 sm:w-12 sm:h-12 text-slate-700 dark:text-slate-300 dark:group-hover:text-white transition-colors duration-300" />
                   </div>
 
-                  <h3 className="relative z-10 font-jetbrains font-semibold text-lg text-slate-900 dark:text-slate-100 group-hover:text-white transition-colors duration-300 text-center">
+                  <h3 className="relative z-10 font-jetbrains font-semibold text-sm sm:text-base md:text-lg text-slate-900 dark:text-slate-100 group-hover:text-white transition-colors duration-300 text-center">
                     {interest.title}
                   </h3>
                 </div>
