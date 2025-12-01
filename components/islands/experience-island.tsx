@@ -30,6 +30,13 @@ const experiences = [
     company: "Dead Mans Tech",
     period: "2025 - Present",
     description: "A SaaS company aimed at making people's lives easier with the technologies we build.",
+    color: "#27ae60",
+  },
+  {
+    role: "Discord Bot Developer",
+    company: "Fiverr",
+    period: "2021 - 2023",
+    description: "Developed custom Discord bots for clients, enhancing their server functionalities and user engagement.",
     color: "#e67e22",
   },
 ]
