@@ -356,16 +356,18 @@ function ProjectModal({
         </div>
       </div>
 
-      <Lightbox
-        open={lightboxOpen}
-        close={() => setLightboxOpen(false)}
-        index={lightboxIndex}
-        slides={images.map((src) => ({ src }))}
-        styles={{
-          container: { backgroundColor: "rgba(0, 0, 0, 0.9)" },
-          root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.9)" },
-        }}
-      />
+      <div onClick={(e) => e.stopPropagation()}>
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          index={lightboxIndex}
+          slides={images.map((src) => ({ src }))}
+          styles={{
+            container: { backgroundColor: "rgba(0, 0, 0, 0.9)" },
+            root: { "--yarl__color_backdrop": "rgba(0, 0, 0, 0.9)" },
+          }}
+        />
+      </div>
     </div>,
     document.body,
   )
