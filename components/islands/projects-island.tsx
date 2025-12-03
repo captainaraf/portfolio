@@ -18,6 +18,7 @@ import {
   Wand2,
   Lock,
   MessageSquare,
+  ShoppingBag,
 } from "lucide-react"
 import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
@@ -78,6 +79,23 @@ const ventures: Venture[] = [
     notes:
       "I am treating this as a side business, the development is finished. We are waiting for some external factors to launch.",
     color: "#9b59b6",
+  },
+  {
+    icon: ShoppingBag,
+    role: "Develoepr",
+    key: "kindredhearts",
+    organization: "Kindred Hearts",
+    subheading: "A philanthropic site with e-commerce, donation, volunteer signup, and blog.",
+    description:
+      "A philanthropic website that allows users to donate, volunteer, and shop for products. It has a blog section where users can read about the latest news and updates. It also has an admin panel to manage the content.",
+    url: "https://kindredhearts.captainaraf.com/",
+    badge: "Weekend Project",
+    buttonText: "Visit Site",
+    blocked: false,
+    type: "Website",
+    notes:
+      "It was a weekend project I did alone. It is not a real site, but it has all the features of a real e-commerce site. It has a donation system, volunteer signup, and blog.",
+    color: "#f39c12",
   },
   {
     icon: BookOpen,
