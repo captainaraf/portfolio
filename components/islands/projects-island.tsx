@@ -68,16 +68,13 @@ const ventures: Venture[] = [
     role: "Co-Creator, Lead Developer",
     key: "pippaquiz",
     organization: "PippaQuiz",
-    subheading: "Subsidiary of Dead Mans Tech",
+    subheading: "Product of Dead Mans Tech",
     description:
       "An AI powered software service that can instantly generate quizzes from any study material, reducing the time and effort required to create quizzes manually. It aims to make the lives of teachers easier so that they can give their focus into teaching, while leaving the repetitive and redundant part on us.",
-    url: "https://pippaquiz.example",
-    badge: "Not Launched Yet",
+    url: "https://www.pippaquiz.com",
     buttonText: "Visit Site",
     blocked: true,
     type: "Website",
-    notes:
-      "I am treating this as a side business, the development is finished. We are waiting for some external factors to launch.",
     color: "#9b59b6",
   },
   {

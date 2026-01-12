@@ -19,18 +19,18 @@ const experiences = [
     color: "#4a90d9",
   },
   {
-    role: "Software Engineer",
-    company: "Prodigy Studios",
-    period: "2025 - Present",
-    description: "Offering my expertise in software development to help create innovative and scalable solutions.",
-    color: "#9b59b6",
-  },
-  {
     role: "Co-Founder, CEO & CTO",
     company: "Dead Mans Tech",
     period: "2025 - Present",
     description: "A SaaS company aimed at making people's lives easier with the technologies we build.",
     color: "#27ae60",
+  },
+  {
+    role: "Software Engineer",
+    company: "Prodigy Studios",
+    period: "2025 - Present",
+    description: "Offering my expertise in software development to help create innovative and scalable solutions.",
+    color: "#9b59b6",
   },
   {
     role: "Discord Bot Developer",
