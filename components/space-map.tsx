@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState, useRef, useCallback, useEffect, memo } from "react"
-import { Home, User, Trophy, Briefcase, FolderOpen, Mail, Quote, Compass, Move } from "lucide-react"
+import { Home, User, Trophy, Briefcase, FolderOpen, Mail, Quote, Compass, Move, BookOpen } from "lucide-react"
 
 import { MapStarField } from "@/components/space/map-star-field"
 import { HeroIsland } from "@/components/islands/hero-island"
@@ -12,6 +12,7 @@ import { ExperienceIsland } from "@/components/islands/experience-island"
 import { ProjectsIsland } from "@/components/islands/projects-island"
 import { ContactIsland } from "@/components/islands/contact-island"
 import { QuoteIsland } from "@/components/islands/quote-island"
+import { BlogsIsland } from "@/components/islands/blogs-island"
 import { BackgroundPlanet } from "@/components/space/background-planet"
 import { TravelingRocket } from "@/components/space/traveling-rocket"
 
@@ -24,6 +25,7 @@ const sections = [
   { id: "achievements", label: "Achievements", icon: Trophy, x: 3800, y: 1200 },
   { id: "experience", label: "Experience", icon: Briefcase, x: 800, y: 2800 },
   { id: "projects", label: "Projects", icon: FolderOpen, x: 3600, y: 2600 },
+  { id: "blogs", label: "Blogs", icon: BookOpen, x: 1400, y: 3000 },
   { id: "contact", label: "Contact", icon: Mail, x: 2000, y: 3400 },
   { id: "quote", label: "Quote", icon: Quote, x: 4200, y: 3200 },
 ]
@@ -54,6 +56,7 @@ const MemoizedExperienceIsland = memo(ExperienceIsland)
 const MemoizedProjectsIsland = memo(ProjectsIsland)
 const MemoizedContactIsland = memo(ContactIsland)
 const MemoizedQuoteIsland = memo(QuoteIsland)
+const MemoizedBlogsIsland = memo(BlogsIsland)
 
 function animatePosition(
   from: { x: number; y: number },
@@ -335,14 +338,15 @@ export function SpaceMap() {
         />
         <MemoizedAboutIsland x={sections[1].x} y={sections[1].y} isActive={activeSection === "about"} />
         <MemoizedHallOfFameIsland x={sections[2].x} y={sections[2].y} isActive={activeSection === "achievements"} />
-        <MemoizedExperienceIsland x={sections[3].x} y={sections[3].y} isActive={activeSection === "experience"} />
         <MemoizedProjectsIsland
           x={sections[4].x}
           y={sections[4].y}
           isActive={activeSection === "projects"}
         />
-        <MemoizedContactIsland x={sections[5].x} y={sections[5].y} isActive={activeSection === "contact"} />
-        <MemoizedQuoteIsland x={sections[6].x} y={sections[6].y} isActive={activeSection === "quote"} />
+        <MemoizedExperienceIsland x={sections[3].x} y={sections[3].y} isActive={activeSection === "experience"} />
+        <MemoizedBlogsIsland x={sections[5].x} y={sections[5].y} isActive={activeSection === "blogs"} />
+        <MemoizedContactIsland x={sections[6].x} y={sections[6].y} isActive={activeSection === "contact"} />
+        <MemoizedQuoteIsland x={sections[7].x} y={sections[7].y} isActive={activeSection === "quote"} />
       </div>
 
       {/* Hint overlay */}
