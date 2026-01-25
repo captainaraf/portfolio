@@ -1,7 +1,5 @@
-"use client"
-
-import { SpaceMap } from "@/components/space-map"
+import { LandingPage } from "@/components/landing-page"
 
 export default function Home() {
-  return <SpaceMap />
+  return <LandingPage />
 }
