@@ -14,17 +14,38 @@ export const metadata: Metadata = {
     default: "Shaidozzaman Araf | AI Engineer & Full Stack Developer",
     template: "%s | Shaidozzaman Araf",
   },
-  description: "Portfolio of Shaidozzaman Araf, an AI engineer and Full Stack Developer specializing in building intelligent, scalable web applications and solving complex problems.",
-  keywords: ["Shaidozzaman Araf", "AI Engineer", "Full Stack Developer", "Software Engineer", "Web Development", "Next.js", "React", "Machine Learning", "PippaQuiz", "Innoverse"],
-  authors: [{ name: "Shaidozzaman Araf" }],
+  description: "Portfolio of Shaidozzaman Araf, an AI engineer, Full Stack Developer, and entrepreneur based in Bangladesh. Specializing in building intelligent, scalable web applications and solving complex problems with modern technologies.",
+  keywords: [
+    "Shaidozzaman Araf",
+    "Captain Araf",
+    "AI Engineer",
+    "Full Stack Developer",
+    "Software Engineer",
+    "Web Development",
+    "Next.js Developer",
+    "React Developer",
+    "Machine Learning",
+    "PippaQuiz",
+    "Innoverse",
+    "WhiteBoard Initiatives",
+    "Prodigy Studios",
+    "Bangladesh",
+    "Dhaka",
+    "Competitive Programmer"
+  ],
+  authors: [{ name: "Shaidozzaman Araf", url: "https://captainaraf.com" }],
   creator: "Shaidozzaman Araf",
+  publisher: "Shaidozzaman Araf",
+  alternates: {
+    canonical: "https://captainaraf.com",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://captainaraf.com",
     title: "Shaidozzaman Araf | AI Engineer & Full Stack Developer",
     description: "Portfolio of Shaidozzaman Araf, an AI engineer and Full Stack Developer specializing in building intelligent, scalable web applications.",
-    siteName: "Shaidozzaman Araf Portfolio",
+    siteName: "Shaidozzaman Araf",
     images: [
       {
         url: "/araf.jpg",
@@ -38,6 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shaidozzaman Araf | AI Engineer & Full Stack Developer",
     description: "Portfolio of Shaidozzaman Araf, an AI engineer and Full Stack Developer.",
+    creator: "@captainaraf",
     images: ["/araf.jpg"],
   },
   icons: {
@@ -56,6 +78,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: "google-site-verification-code", // Replace with your actual verification code
+  },
+  category: "technology",
 }
 
 export const viewport: Viewport = {
@@ -84,14 +110,32 @@ export default function RootLayout({
                 "https://github.com/captainaraf",
                 "https://facebook.com/in/shaidozzamanaraf",
                 "https://twitter.com/captainaraf",
-                "https://captainaraf.substack.com/"
+                "https://captainaraf.substack.com/",
+                "https://www.linkedin.com/in/shaidozzamanaraf"
               ],
-              "jobTitle": "AI Engineer & Full Stack Developer",
-              "worksFor": {
-                "@type": "Organization",
-                "name": "PippaQuiz"
-              },
-              "description": "AI engineer and Full Stack Developer specializing in building intelligent, scalable web applications."
+              "jobTitle": ["AI Engineer", "Full Stack Developer", "CEO", "CTO"],
+              "worksFor": [
+                {
+                  "@type": "Organization",
+                  "name": "PippaQuiz",
+                  "url": "https://pippaquiz.com"
+                },
+                {
+                  "@type": "Organization",
+                  "name": "WhiteBoard Initiatives"
+                },
+                {
+                  "@type": "Organization",
+                  "name": "Prodigy Studios"
+                }
+              ],
+              "description": "AI engineer and Full Stack Developer specializing in building intelligent, scalable web applications.",
+              "knowsAbout": ["Artificial Intelligence", "Computer Science", "Web Development", "Next.js", "React", "Machine Learning", "Software Engineering"],
+              "award": [
+                "National Finalist - Bangladesh Olympiad in AI",
+                "Divisional Runner Up - National High School Programming Contest",
+                "National Contestant - Bangladesh Olympiad in Informatics"
+              ]
             })
           }}
         />
