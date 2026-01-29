@@ -12,8 +12,8 @@ const experiences = [
     },
 
     {
-        role: "Co-Founder & Lead Developer",
-        company: "PippaQuiz (Dead Mans Tech)",
+        role: "Co-Founder, CEO and CTO",
+        company: "PippaQuiz",
         period: "2025 - Present",
         description: "Founded and engineered PippaQuiz, evolving it from a quiz generator into a complete examination platform. Led the development of advanced features including in-app exams and automatic MCQ evaluation systems. Spearheading product strategy, full-stack architecture, and user experience to democratize educational assessment tools.",
         color: "#27ae60",
