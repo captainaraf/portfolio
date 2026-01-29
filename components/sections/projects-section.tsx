@@ -75,9 +75,9 @@ const ventures: Venture[] = [
         role: "Co-Founder, Lead Developer",
         key: "pippaquiz",
         organization: "PippaQuiz",
-        subheading: "AI-Powered Quiz Generator",
+        subheading: "AI-Powered Exam Platform",
         description:
-            "Revolutionizing education by automating quiz creation. Built an AI engine that instantly converts any study material into interactive quizzes, saving teachers hours of manual work and enabling students to test their knowledge instantly.",
+            "Evolved from a simple quiz generator into a comprehensive assessment platform. I engineered the full-stack architecture supporting in-app exams with automatic MCQ evaluation, enabling educators to create, administer, and grade assessments effortlessly.",
         url: "https://www.pippaquiz.com",
         buttonText: "Visit Site",
         blocked: true,
