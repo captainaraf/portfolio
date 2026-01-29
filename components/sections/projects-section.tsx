@@ -72,14 +72,14 @@ const ventures: Venture[] = [
     },
     {
         icon: Brain,
-        role: "Co-Founder, Lead Developer",
+        role: "Co-Founder, CEO and CTO",
         key: "pippaquiz",
         organization: "PippaQuiz",
         subheading: "AI-Powered Exam Platform",
         description:
             "Evolved from a simple quiz generator into a comprehensive assessment platform. I engineered the full-stack architecture supporting in-app exams with automatic MCQ evaluation, enabling educators to create, administer, and grade assessments effortlessly.",
-        url: "https://www.pippaquiz.com",
-        buttonText: "Visit Site",
+        url: ["https://www.pippaquiz.com", "https://www.pippaquiz.com/onboarding"],
+        buttonText: ["Visit Site", "How it Helps"],
         blocked: true,
         type: "Website",
         color: "#9b59b6",
