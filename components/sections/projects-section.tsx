@@ -60,7 +60,7 @@ const ventures: Venture[] = [
         organization: "Innoverse Bangladesh",
         subheading: "The Largest Science and Technology Carnival in the History of Bangladesh",
         description:
-            "Orchestrated the largest sci-tech carnival in Bangladesh's history with 20,000+ visitors. Collaborated directly with the ICT Division to deliver a seamless event featuring competitions, expos, and tech talks. Managed critical technical infrastructure and led the programming contest execution.",
+            "Orchestrated the largest sci-tech carnival in Bangladesh's history, attracting over 20,000 visitors. I collaborated directly with the ICT Division to deliver a seamless event featuring national-level competitions, expos, and tech talks, while managing critical technical infrastructure and leading the programming contest execution.",
         url: ["https://www.tbsnews.net/economy/corporates/innoverse-bangladesh-2025-concludes-buet-celebrating-young-innovators-1287276", "https://www.facebook.com/reel/1385960089544284"],
         buttonText: ["Visit News Coverage", "View Event Reel"],
         blocked: false,
@@ -77,7 +77,7 @@ const ventures: Venture[] = [
         organization: "PippaQuiz",
         subheading: "AI-Powered Exam Platform",
         description:
-            "Evolved from a simple quiz generator into a comprehensive assessment platform. I engineered the full-stack architecture supporting in-app exams with automatic MCQ evaluation, enabling educators to create, administer, and grade assessments effortlessly.",
+            "An award-winning AI-powered assessment ecosystem that recently claimed the 'Best Startup' title at a major Innovation Summit. I architected the complete full-stack infrastructure, featuring advanced in-app examination capabilities and automated grading systems that are revolutionizing how educators administer assessments.",
         url: ["https://www.pippaquiz.com", "https://www.pippaquiz.com/onboarding"],
         buttonText: ["Visit Site", "How it Helps"],
         blocked: true,
@@ -115,7 +115,7 @@ const ventures: Venture[] = [
         organization: "NutritionCare4Mom",
         subheading: "Maternal Health Platform",
         description:
-            "Developed a comprehensive digital health platform for expectant mothers. Features include an AI-powered health assistant, appointment scheduling system, and bilingual content (English/Bangla) to make maternal healthcare accessible.",
+            "Designed and developed a comprehensive digital health platform for expectant mothers. The platform features an AI-powered health assistant, a streamlined appointment scheduling system, and bilingual content (English/Bangla), effectively bridging the gap in accessible maternal healthcare.",
         url: "https://nutritioncare4mom.com/",
         badge: "Professional Work",
         buttonText: "Visit Site",

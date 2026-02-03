@@ -3,6 +3,7 @@
 import { HeroSection } from "@/components/sections/hero-section"
 import { ExperienceSection } from "@/components/sections/experience-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
+import { HallOfFameSection } from "@/components/sections/hall-of-fame-section"
 import { Mail, Github, Twitter, Facebook } from "lucide-react"
 
 export function LandingPage() {
@@ -17,6 +18,7 @@ export function LandingPage() {
             <div className="relative z-10">
                 <HeroSection />
                 <ExperienceSection />
+                <HallOfFameSection />
                 <ProjectsSection />
 
                 <footer className="py-12 border-t border-border mt-24">

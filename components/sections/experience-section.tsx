@@ -7,7 +7,7 @@ const experiences = [
         role: "Assistant Executive of Technology",
         company: "WhiteBoard Initiatives",
         period: "2025 - Present",
-        description: "Leading technology strategy for one of Bangladesh's largest STEM non-profits. Orchestrated major events like Innoverse, managed cross-functional teams, and drove technological impact reaching thousands of students nationwide.",
+        description: "Spearheading technology initiatives for one of the nation's largest STEM non-profits. I orchestrate large-scale technical operations for events like 'Innoverse', manage cross-functional engineering teams, and implement digital strategies that impact thousands of students across the country.",
         color: "#4a90d9",
     },
 
@@ -15,14 +15,14 @@ const experiences = [
         role: "Co-Founder, CEO and CTO",
         company: "PippaQuiz",
         period: "2025 - Present",
-        description: "Founded and engineered PippaQuiz, evolving it from a quiz generator into a complete examination platform. Led the development of advanced features including in-app exams and automatic MCQ evaluation systems. Spearheading product strategy, full-stack architecture, and user experience to democratize educational assessment tools.",
+        description: "Founder & CTO of an award-winning EdTech startup recognized as the 'Best Startup' at a premier Innovation Summit. I lead the end-to-end product strategy and engineering, transforming a simple tool into a robust examination platform used by educators to streamline assessments through AI-driven automation.",
         color: "#27ae60",
     },
     {
         role: "Software Engineer",
         company: "Prodigy Studios",
         period: "2025 - Present",
-        description: "Architecting innovative software solutions with a focus on scalability and performance. Leveraging modern web technologies to deliver high-quality, robust digital products for diverse clients.",
+        description: "Delivering high-performance software solutions for a diverse client base. I specialize in architecting scalable web applications and leveraging modern tech stacks to build robust, production-grade digital products.",
         color: "#9b59b6",
     },
 ]

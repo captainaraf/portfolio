@@ -22,54 +22,11 @@ export function HeroSection() {
                     </span>
                 </h1>
 
-                <p className="text-xl md:text-3xl text-muted-foreground max-w-3xl leading-relaxed mb-12">
-                    Driven by a vision to make life easier through technology. I build initiatives at the intersection of <span className="text-foreground font-semibold">AI</span>,{" "}
-                    <span className="text-foreground font-semibold">Computer Science</span> &{" "}
-                    <span className="text-foreground font-semibold">Business Strategy</span>.
+                <p className="text-xl md:text-3xl text-muted-foreground max-w-4xl leading-relaxed mb-12">
+                    At 16, I founded <span className="text-foreground font-bold">PippaQuiz</span>, an award-winning AI-driven examination platform. I am dedicated to architecting high-impact solutions at the confluence of <span className="text-foreground font-semibold">Artificial Intelligence</span>, <span className="text-foreground font-semibold">Computer Science</span>, and <span className="text-foreground font-semibold">Business Strategy</span>.
                 </p>
 
                 <div className="flex flex-wrap gap-6 mb-12">
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-sm font-medium cursor-help hover:bg-yellow-500/20 transition-colors">
-                                    <span>🏆</span> National Finalist - Bangladesh Olympiad in AI
-                                </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Top 10 National Finalist among 5000+ participants.</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-sm font-medium cursor-help hover:bg-blue-500/20 transition-colors">
-                                    <span>🥈</span> Divisional Runner Up - National High School Programming Contest
-                                </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>2nd Place in Divisional Round (NHSPC).</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-
-                    <TooltipProvider>
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-sm font-medium cursor-help hover:bg-green-500/20 transition-colors">
-                                    <span>💻</span> National Contestant - Bangladesh Olympiad in Informatics
-                                </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                                <p>Selected National Contestant (BdOI).</p>
-                            </TooltipContent>
-                        </Tooltip>
-                    </TooltipProvider>
-                </div>
-
-                <div className="flex flex-wrap gap-6">
                     <a
                         href="https://captainaraf.substack.com/"
                         target="_blank"
