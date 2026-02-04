@@ -5,19 +5,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: 'https://captainaraf.com',
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 1,
         },
         {
             url: 'https://captainaraf.com/#projects',
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
             url: 'https://captainaraf.com/#experience',
             lastModified: new Date(),
-            changeFrequency: 'monthly',
+            changeFrequency: 'weekly',
             priority: 0.5,
         },
     ]

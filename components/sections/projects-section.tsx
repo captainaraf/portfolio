@@ -21,6 +21,7 @@ import {
     Target,
     AlertTriangle,
     Lightbulb,
+    Code
 } from "lucide-react"
 import Lightbox from "yet-another-react-lightbox"
 import "yet-another-react-lightbox/styles.css"
@@ -268,11 +269,11 @@ function ProjectModal({
 
     return createPortal(
         <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-background/80 backdrop-blur-lg"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-background/80 backdrop-blur-lg animate-in fade-in zoom-in duration-300"
             onClick={onClose}
         >
             <div
-                className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto bg-card border border-border rounded-3xl p-6"
+                className="relative w-full max-w-4xl max-h-[85vh] overflow-y-auto bg-card border border-border rounded-3xl p-6 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
@@ -373,14 +374,6 @@ function ProjectModal({
                                 </>
                             )}
                         </div>
-
-                        {project.type && (
-                            <div className="mt-4">
-                                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-white shadow-sm bg-gradient-to-r from-purple-500 via-pink-500 to-red-400">
-                                    {project.type}
-                                </span>
-                            </div>
-                        )}
                     </div>
 
                     <div className="space-y-4">
@@ -434,123 +427,96 @@ function ProjectModal({
 export function ProjectsSection() {
     const [selectedProject, setSelectedProject] = useState<Venture | null>(null)
 
-    const projects = ventures.filter((v) => v.category === "project")
-    const initiatives = ventures.filter((v) => v.category === "initiative")
+    // Filter out spotlighted projects to avoid redundancy
+    const spotlightKeys = ["innoverse", "pippaquiz"]
+
+    const projects = ventures.filter((v) => v.category === "project" && !spotlightKeys.includes(v.key))
+    const initiatives = ventures.filter((v) => v.category === "initiative" && !spotlightKeys.includes(v.key))
 
     return (
-        <section id="projects" className="py-32 px-6 md:px-12 max-w-5xl mx-auto">
+        <section id="projects" className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto" aria-label="Other Projects and Initiatives">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <h2 className="text-3xl md:text-4xl font-bold mb-16">Selected Works</h2>
+                <div className="text-center mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-secondary text-muted-foreground text-sm font-medium mb-6">
+                        <FolderOpen className="w-4 h-4" />
+                        <span>Portfolio</span>
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Other Projects</h2>
+                    <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+                        Experiments, initiatives, and tools I've built along the way.
+                    </p>
+                </div>
 
-                {/* Startups & Initiatives Section (Previously Initiatives) */}
+                {/* Initiatives */}
                 <div className="mb-24">
                     <div className="flex items-center gap-3 mb-8">
                         <Rocket className="w-6 h-6 text-primary" />
-                        <h3 className="text-2xl font-bold">Startups & Solving World Problems</h3>
+                        <h3 className="text-2xl font-bold">Startups & Initiatives</h3>
                     </div>
-
-                    <div className="space-y-8">
+                    <div className="grid md:grid-cols-2 gap-6">
                         {initiatives.map((project) => {
                             const Icon = project.icon
                             return (
-                                <GlowCard
+                                <div
                                     key={project.key}
-                                    className="cursor-pointer group relative overflow-visible"
-                                    glowColor={`${project.color}30`}
+                                    onClick={() => setSelectedProject(project)}
+                                    className="group relative p-6 rounded-3xl border border-border bg-card/40 hover:bg-card/80 transition-all cursor-pointer hover:shadow-lg"
                                 >
-                                    <div
-                                        onClick={() => setSelectedProject(project)}
-                                        className="hover:scale-[1.01] active:scale-[0.99] transition-transform p-8"
-                                    >
-                                        <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                                            <div
-                                                className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0"
-                                                style={{ backgroundColor: `${project.color}20` }}
-                                            >
-                                                <Icon className="w-8 h-8" style={{ color: project.color }} />
-                                            </div>
-
-                                            <div className="flex-1">
-                                                <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                                                    <h4 className="font-bold text-xl md:text-2xl group-hover:text-primary transition-colors">
-                                                        {project.organization}
-                                                    </h4>
-                                                    {project.badge && (
-                                                        <span className="px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">
-                                                            {project.badge}
-                                                        </span>
-                                                    )}
-                                                </div>
-
-                                                <p className="text-base font-medium text-muted-foreground mb-4">{project.role}</p>
-                                                <p className="text-muted-foreground leading-relaxed mb-4">{project.description}</p>
-
-                                                <div className="flex items-center gap-4">
-                                                    <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                                                        <span>View Details</span>
-                                                        <ExternalLink className="w-4 h-4" />
-                                                    </div>
-
-                                                    {project.failureEntry && (
-                                                        <div className="flex items-center gap-2 text-xs font-bold text-accent">
-                                                            <Target className="w-3 h-3" />
-                                                            <span>Failure Journal Entry</span>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
+                                    <div className="flex items-start gap-4">
+                                        <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${project.color}15` }}>
+                                            <Icon className="w-6 h-6" style={{ color: project.color }} />
                                         </div>
+                                        <div>
+                                            <h4 className="font-bold text-lg group-hover:text-primary transition-colors">{project.organization}</h4>
+                                            <p className="text-sm font-medium text-muted-foreground">{project.role}</p>
+                                        </div>
+                                        {project.badge && (
+                                            <span className="ml-auto px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">
+                                                {project.badge}
+                                            </span>
+                                        )}
                                     </div>
-                                </GlowCard>
+                                    <p className="mt-4 text-sm text-muted-foreground/80 line-clamp-2">{project.description}</p>
+                                    <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                                        View Details <ExternalLink className="w-3 h-3" />
+                                    </div>
+                                </div>
                             )
                         })}
                     </div>
                 </div>
 
-                {/* Hobby Projects Section (Previously Major Projects) */}
+                {/* Hobby Projects */}
                 <div>
                     <div className="flex items-center gap-3 mb-8">
-                        <FolderOpen className="w-6 h-6 text-accent" />
-                        <h3 className="text-2xl font-bold">Hobby Projects & Experiments</h3>
+                        <Code className="w-6 h-6 text-accent" />
+                        <h3 className="text-2xl font-bold">Hobby Projects</h3>
                     </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {projects.map((project) => {
                             const Icon = project.icon
                             return (
-                                <GlowCard
+                                <div
                                     key={project.key}
-                                    className="cursor-pointer group relative overflow-visible h-full"
-                                    glowColor={`${project.color}30`}
+                                    onClick={() => setSelectedProject(project)}
+                                    className="group relative p-6 rounded-3xl border border-border bg-card/40 hover:bg-card/80 transition-all cursor-pointer hover:shadow-lg flex flex-col h-full"
                                 >
-                                    <div
-                                        onClick={() => setSelectedProject(project)}
-                                        className="hover:scale-[1.02] active:scale-[0.98] transition-transform p-6 h-full flex flex-col"
-                                    >
-                                        <div className="flex items-start gap-4 mb-4">
-                                            <div
-                                                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                                                style={{ backgroundColor: `${project.color}20` }}
-                                            >
-                                                <Icon className="w-6 h-6" style={{ color: project.color }} />
-                                            </div>
-
-                                            <div>
-                                                <h4 className="font-bold text-lg group-hover:text-accent transition-colors">
-                                                    {project.organization}
-                                                </h4>
-                                                <p className="text-sm font-medium text-muted-foreground">{project.role}</p>
-                                            </div>
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: `${project.color}15` }}>
+                                            <Icon className="w-5 h-5" style={{ color: project.color }} />
                                         </div>
-
-                                        <p className="text-sm text-muted-foreground line-clamp-3 mb-4 flex-1">{project.description}</p>
+                                        <h4 className="font-bold text-base group-hover:text-primary transition-colors line-clamp-1">{project.organization}</h4>
                                     </div>
-                                </GlowCard>
+                                    <p className="text-sm text-muted-foreground/80 line-clamp-3 mb-4 flex-1">{project.description}</p>
+                                    <div className="flex items-center gap-2 text-xs font-semibold text-primary opacity-50 group-hover:opacity-100 transition-opacity mt-auto">
+                                        View Details <ExternalLink className="w-3 h-3" />
+                                    </div>
+                                </div>
                             )
                         })}
                     </div>
